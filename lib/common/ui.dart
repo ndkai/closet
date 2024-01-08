@@ -6,15 +6,13 @@ class Ui {
       {String title = 'Thành công', required String message}) {
     Get.log("[$title] $message");
     return GetSnackBar(
-      titleText: Text(title.tr, style: Get.textTheme.headline6!.merge(
-          TextStyle(color: Get.theme.primaryColor))),
-      messageText: Text(message, style: Get.textTheme.caption!.merge(
-          TextStyle(color: Get.theme.primaryColor))),
+      titleText: Text(title.tr, style: const TextStyle(color: Colors.white, fontWeight: FontWeight.bold, fontSize: 16)),
+      messageText: Text(message, style: const TextStyle(color: Colors.white)),
       snackPosition: SnackPosition.BOTTOM,
       margin: const EdgeInsets.all(20),
       backgroundColor: Colors.green,
-      icon: Icon(
-          Icons.check_circle_outline, size: 32, color: Get.theme.primaryColor),
+      icon: const Icon(
+          Icons.check_circle_outline, size: 32, color: Colors.white),
       padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 18),
       borderRadius: 8,
       dismissDirection: DismissDirection.horizontal,
@@ -48,17 +46,15 @@ class Ui {
     Get.closeAllSnackbars();
     return GetSnackBar(
 
-      titleText: Text(title.tr, style: Get.textTheme.headline6!.merge(
-          const TextStyle(color: Colors.white))),
-      messageText: Text(message, style: Get.textTheme.caption!.merge(
-          const TextStyle(color: Colors.white))),
+      titleText: Text(title.tr, style: const TextStyle(color: Colors.black, fontWeight: FontWeight.bold)),
+      messageText: Text(message, style: const TextStyle(color: Colors.black)),
       snackPosition: SnackPosition.BOTTOM,
       margin: const EdgeInsets.all(20),
-      backgroundColor: Colors.orange,
-      icon: const Icon(Icons.info_outline, size: 32, color: Colors.white),
+      backgroundColor: Colors.grey,
+      icon: const Icon(Icons.info_outline, size: 32, color: Colors.black),
       padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 18),
       borderRadius: 8,
-      duration: const Duration(seconds: 3),
+      duration: const Duration(seconds: 2),
     );
   }
 
@@ -79,7 +75,7 @@ class Ui {
           Icons.warning_amber_rounded, size: 32, color: Get.theme.hintColor),
       padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 18),
       borderRadius: 8,
-      duration: const Duration(seconds: 5),
+      duration: const Duration(seconds: 1),
     );
   }
 

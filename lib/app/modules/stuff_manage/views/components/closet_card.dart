@@ -1,16 +1,22 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:weather_app/common/size_config.dart';
+import 'package:weather_app/common/ui.dart';
+
+import '../../../../routes/app_routes.dart';
 
 class ClosetCard extends StatefulWidget {
   final String title;
   final String assetPath;
   final List<String> items;
+  final Function onTap;
 
   const ClosetCard(
       {super.key,
       required this.title,
       required this.assetPath,
-      required this.items});
+      required this.items, required this.onTap});
 
   @override
   State<ClosetCard> createState() => _ClosetCardState();
@@ -44,15 +50,24 @@ class _ClosetCardState extends State<ClosetCard> {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  Row(
-                    children: [
-                      Image.asset(
-                        widget.assetPath,
-                        height: 30,
-                        width: 30,
-                      ),
-                      Text("  ${widget.title}")
-                    ],
+                  InkWell(
+                    onTap: (){
+                      widget.onTap();
+                      Get.toNamed(Routes.DETAILEDCATEGORY);
+                    },
+                    child: Row(
+                      children: [
+                        Image.asset(
+                          widget.assetPath,
+                          height: 30,
+                          width: 30,
+                        ),
+                        Hero(
+                          tag: "category",
+                          child: Text("  ${widget.title}", style: GoogleFonts.sourceSans3(fontWeight: FontWeight.w500, fontSize: 16),),
+                        )
+                      ],
+                    )
                   ),
                   InkWell(
                     onTap: () {
@@ -129,7 +144,7 @@ class _ClosetCardState extends State<ClosetCard> {
         );
       case 1:
         return const Icon(
-          Icons.disabled_visible,
+          Icons.visibility_off,
           size: 25,
         );
       default:

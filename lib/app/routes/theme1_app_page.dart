@@ -3,6 +3,7 @@
 import 'package:get/get_navigation/src/routes/get_route.dart';
 import 'package:weather_app/app/modules/stuff_manage/bindings/stuff_manage_binding.dart';
 import 'package:weather_app/app/modules/stuff_manage/views/all_stuffed_view.dart';
+import 'package:weather_app/app/modules/stuff_manage/views/detailed_category_view.dart';
 import '../modules/home/bindings/home_binding.dart';
 import '../modules/home/views/home_view.dart';
 import '../modules/root/bindings/root_binding.dart';
@@ -18,6 +19,7 @@ class Theme1AppPages{
     GetPage(name: Routes.HOME, page: () => const HomeView(), binding: HomeBinding()),
     GetPage(name: Routes.AllSTUFF, page: () => const AllStuffView(), binding: StuffManageBinding()),
     GetPage(name: Routes.STUFFCATEGORY, page: () => const StuffCategoryView(), binding: StuffManageBinding()),
+    GetPage(name: Routes.DETAILEDCATEGORY, page: () => const DetailedCatgoryView()),
 
   ];
 }

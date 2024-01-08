@@ -6,4 +6,5 @@ class Routes{
   static const ROOT = '/root';
   static const AllSTUFF = '/all_stuffed';
   static const STUFFCATEGORY = '/stuff_category';
+  static const DETAILEDCATEGORY = '/detailed_category';
 }
