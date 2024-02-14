@@ -19,6 +19,7 @@ class StuffManageController extends GetxController {
   RxList<StuffCategory> stuffCategories = <StuffCategory>[].obs;
   Isar localDb = Get.find<LocalDbProvider>().isar;
   RxBool choosingMode = false.obs;
+  RxBool addMode = false.obs;
   RxInt choosingAssetImage = 9999.obs;
   StuffCategory? choosingStuffCategoty;
 

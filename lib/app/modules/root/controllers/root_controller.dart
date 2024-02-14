@@ -4,6 +4,10 @@ import 'package:get/get.dart';
 import '../../../routes/app_routes.dart';
 import '../../home/controllers/home_controller.dart';
 import '../../home/views/home_view.dart';
+import '../../stuff_manage/controllers/stuff_manage_controller.dart';
+import '../../stuff_manage/views/all_stuffed_view.dart';
+import '../../stuff_manage/views/detailed_category_view.dart';
+import '../../stuff_manage/views/stuff_category_view.dart';
 
 
 class RootController extends GetxController {
@@ -29,9 +33,9 @@ class RootController extends GetxController {
 
   List<Widget> pages = [
     const HomeView(),
-    const HomeView(),
-    const HomeView(),
-    const HomeView()
+    const AllStuffView(),
+    const DetailedCatgoryView(),
+    const StuffCategoryView()
   ];
 
   Widget get currentPage => pages[currentIndex.value];
@@ -42,6 +46,7 @@ class RootController extends GetxController {
 
   void inputPageController(){
     Get.lazyPut<HomeController>(() => HomeController());
+    Get.lazyPut<StuffManageController>(() => StuffManageController());
   }
 
   void changePageOutRoot(int _index) {

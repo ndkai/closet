@@ -12,7 +12,7 @@ import '../modules/stuff_manage/views/stuff_category_view.dart';
 import 'app_routes.dart';
 
 class Theme1AppPages{
-  static const INITIAL = Routes.STUFFCATEGORY;
+  static const INITIAL = Routes.ROOT;
 
   static final routes = [
     GetPage(name: Routes.ROOT, page: () => const RootView(), binding: RootBinding()),

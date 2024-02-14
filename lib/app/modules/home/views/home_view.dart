@@ -12,71 +12,35 @@ class HomeView extends GetView<HomeController> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        backgroundColor: Colors.grey.withOpacity(.1),
+        leading: Center(
+          child: Text("My Closet"),
+        ),
+        leadingWidth: 100,
+        actions: [
+          Icon(
+            Icons.ac_unit
+          ),
+          Icon(
+              Icons.ac_unit
+          ),
+          Icon(
+              Icons.ac_unit
+          ),
+        ],
+      ),
       body: SafeArea(
-        child: Stack(
+        child: Column(
           children: [
+            Text("Good morning, Kaind"),
+            Text("See your dress to day"),
             Row(
               children: [
                 Container(
-                  color: Colors.black,
-                  height: SizeConfig.screenHeight,
-                  width: 100,
-                  child: ListView.builder(
-                      itemCount: 20,
-                      itemBuilder: (context, index) {
-                        return Container(
-                          padding: const EdgeInsets.all(8),
-                          child: const Text(
-                            "Quần áo",
-                            style: TextStyle(color: Colors.white),
-                          ),
-                        );
-                      }),
-                ),
-                Expanded(
-                    child: ListView.builder(
-                        itemCount: 20,
-                        itemBuilder: (context, index) {
-                          return SingleChildScrollView(
-                            scrollDirection: Axis.horizontal,
-                            child: DragTarget(
-                              builder: (context, _, __) {
-                                return Container(
-                                  margin: const EdgeInsets.all(10),
-                                  height: 200,
-                                  width: 2000,
-                                  color: Colors.yellow,
-                                );
-                              },
-                              onAcceptWithDetails: (detail) {
-                                print(detail);
-                              },
-                            ),
-                          );
-                        }))
+
+                )
               ],
-            ),
-            Align(
-              alignment: Alignment.bottomCenter,
-              child: Container(
-                height: 100,
-                width: SizeConfig.screenWidth,
-                color: Colors.black,
-                child: ListView.builder(
-                  itemCount: 20,
-                  scrollDirection: Axis.horizontal,
-                  itemBuilder: (context, index) {
-                    return Draggable(
-                      feedback: StuffDraggingItem(
-                        dragKey: GlobalKey(),
-                        widget: const StuffItem(),
-                      ),
-                      childWhenDragging: Container(),
-                      child: const StuffItem(),
-                    );
-                  },
-                ),
-              ),
             )
           ],
         ),

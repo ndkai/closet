@@ -57,14 +57,14 @@ class _ClosetCardState extends State<ClosetCard> {
                     },
                     child: Row(
                       children: [
-                        Image.asset(
-                          widget.assetPath,
-                          height: 30,
-                          width: 30,
-                        ),
+                        // Image.asset(
+                        //   widget.assetPath,
+                        //   height: 30,
+                        //   width: 30,
+                        // ),
                         Hero(
                           tag: "category",
-                          child: Text("  ${widget.title}", style: GoogleFonts.sourceSans3(fontWeight: FontWeight.w500, fontSize: 16),),
+                          child: Text("${widget.title}", style: GoogleFonts.sourceSans3(fontWeight: FontWeight.w500, fontSize: 16),),
                         )
                       ],
                     )
